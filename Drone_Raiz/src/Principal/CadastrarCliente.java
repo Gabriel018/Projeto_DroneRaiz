@@ -33,8 +33,8 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         initComponents();
         this.idAlteracao = idAlteracao;
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","admin");
-            String sql = "select * from Cliente where IdCliente = ? ";
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_drz","root"," ");
+            String sql = "select * from cliente where IdCliente = ? ";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setInt(1, idAlteracao);
             ResultSet rs = stmt.executeQuery();
@@ -234,25 +234,26 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         try{
             if(idAlteracao == 0){
                 Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                        + "test","root","");  
-                String sql = "insert into Cliente(Nome,Telefone,DDD,Email,CPF,RG,"
-                        + "DtNascimento) values (?,?,?,?,?,?,?)";
+                        + "bd_drz","root","");  
+                String sql = "insert into Cliente(IDCliente,Nome,Telefone,DDD,Email,CPF,RG,"
+                        + "DtNascimento) values (?,?,?,?,?,?,?,?)";
                 PreparedStatement stmt = con.prepareStatement(sql);
-                stmt.setString(1, this.txtNome.getText());
-                stmt.setInt(2, Integer.parseInt(this.txtTelefone.getText()));
-                stmt.setInt(3, Integer.parseInt(this.txtDDD.getText()));
-                stmt.setString(4, this.txtEmail.getText());
-                stmt.setString(5, this.txtCPF.getText());
-                stmt.setString(6, this.txtRG.getText());
+                stmt.setInt(1, Integer.parseInt(this.txtID.getText()));
+                stmt.setString(2, this.txtNome.getText());
+                stmt.setInt(3, Integer.parseInt(this.txtTelefone.getText()));
+                stmt.setInt(4, Integer.parseInt(this.txtDDD.getText()));
+                stmt.setString(5, this.txtEmail.getText());
+                stmt.setString(6, this.txtCPF.getText());
+                stmt.setString(7, this.txtRG.getText());
                 SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd"); 
                 Date dt = new Date(df.parse(txtDtnascimento.getText()).getTime());
-                stmt.setDate(7, dt);
+                stmt.setDate(8, dt);
                 stmt.execute();
                 stmt.close();
                 con.close();
             }else{
                 Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                        + "test","root","admin");  
+                        + "bd_drz","root","");  
                 String sql = "update Cliente set Nome=?,Telefone=?,DDD=?,Email=?"
                         + ",CPF=?,RG=?,DtNascimento=? where idCliente = ?";
                 PreparedStatement stmt = con.prepareStatement(sql);

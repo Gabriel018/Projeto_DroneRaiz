@@ -5,6 +5,8 @@
  */
 package Principal;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -32,6 +34,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
     private JPanel jdPrincipal;
     public ConsultarProduto(JPanel jdp) {
         initComponents();
+        
         jdPrincipal = jdp;
     }
 
@@ -55,6 +58,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
         btExcluir = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -69,6 +73,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Nome:");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("Pesquisar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,23 +81,31 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        JProduto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nome", "Descriçao", "Valor"
+                "ID", "Nome", "Descriçao", "Quantidade", "Valor"
             }
         ));
         jScrollPane1.setViewportView(JProduto);
+        if (JProduto.getColumnModel().getColumnCount() > 0) {
+            JProduto.getColumnModel().getColumn(2).setResizable(false);
+            JProduto.getColumnModel().getColumn(3).setResizable(false);
+            JProduto.getColumnModel().getColumn(4).setResizable(false);
+        }
 
-        btNovo.setText("Novo");
+        btNovo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btNovo.setText("Cadatrar");
         btNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btNovoActionPerformed(evt);
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setText("Alterar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +113,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        btExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btExcluir.setText("Excluir");
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +121,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setText("Cancelar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,27 +133,26 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btNovo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btNovo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btExcluir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton5))
+                            .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -159,7 +173,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
                         .addComponent(btNovo)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -172,8 +186,8 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","admin");
-            String sql = "select * from Cliente ";
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_drz","root","");
+            String sql = "select * from produto ";
             if(!txtNomeProduto.getText().equals(""))
             sql = sql + " where Nome LIKE ? ";
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -183,9 +197,9 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
             DefaultTableModel model = (DefaultTableModel) JProduto.getModel();
             model.setNumRows(0);
             while(rs.next()){
-                String[] linha = {rs.getString("IDCliente"), rs.getString("Nome"),
-                    rs.getString("DDD"),rs.getString("Telefone"),rs.getString("Email"),
-                    rs.getString("CPF"),rs.getString("RG"), rs.getString("DtNascimento") };
+                String[] linha = {rs.getString("IDProduto"), rs.getString("Nome"),
+                    rs.getString("Descricao"),rs.getString("quant"),rs.getString("valor"),
+                     };
                 model.addRow(linha);
             }
 
@@ -198,16 +212,16 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
         // TODO add your handling code here:
         try{
             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                + "test","root","admin");
-            String sql = "delete from Cliente where IDCliente = ?";
+                + "bd_drz","root","");
+            String sql = "delete from produto where IDProduto = ?";
             PreparedStatement stmt = con.prepareStatement(sql);
             int linha = this.JProduto.getSelectedRow();
             stmt.setInt(1, Integer.parseInt(JProduto.getValueAt(linha, 0).toString()));
@@ -216,7 +230,7 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
             con.close();
             DefaultTableModel model = (DefaultTableModel) JProduto.getModel();
             model.removeRow(linha);
-            JOptionPane.showMessageDialog(this, "Cliente Excluído com Sucesso!");
+            JOptionPane.showMessageDialog(this, "Produto Excluído com Sucesso!");
             this.setClosable(true);
         }catch(SQLException e){
             JOptionPane.showMessageDialog(this, e);
@@ -224,11 +238,8 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       int linha = this.JProduto.getSelectedRow();
-        int id = Integer.parseInt(JProduto.getValueAt(linha, 0).toString());
-        CadastrarProduto cadastrarProduto = new CadastrarProduto();
-        jdPrincipal.add(cadastrarProduto);
-        cadastrarProduto.setVisible(true);
+       
+        dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
@@ -236,8 +247,8 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
         CadastrarProduto cadastrarProduto = new CadastrarProduto();
         jdPrincipal.add(cadastrarProduto);
         cadastrarProduto.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btNovoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable JProduto;
@@ -250,4 +261,8 @@ public class ConsultarProduto extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtNomeProduto;
     // End of variables declaration//GEN-END:variables
+
+   
+
+    
 }

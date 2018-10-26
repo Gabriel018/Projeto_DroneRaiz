@@ -36,50 +36,40 @@ public class Modelos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JModelo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        textArea1 = new java.awt.TextArea();
+        textArea2 = new java.awt.TextArea();
 
-        JModelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jButton1.setText("Modelos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        textArea1.setBackground(new java.awt.Color(51, 51, 255));
+        textArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textArea1.setEditable(false);
+        textArea1.setMaximumSize(new java.awt.Dimension(767, 767));
+        textArea1.setRows(30);
+        textArea1.setText("A ANAC criou regras para as operações civis de aeronaves não tripuladas, também conhecidas como drones.\n\nO Regulamento Brasileiro de Aviação Civil Especial nº 94/2017 (RBAC-E nº 94/2017) da ANAC é complementar às normas \nde operação de drones estabelecidas pelo Departamento de Controle do Espaço Aéreo (DECEA) e pela Agência Nacional de\n Telecomunicações (ANATEL).\n\nPelo regulamento da ANAC, aeromodelos são as aeronaves não tripuladas remotamente pilotadas usadas para recreação e lazer e\nas aeronaves remotamente pilotadas (RPA) são as aeronaves não tripuladas utilizadas para outros fins como experimentais,\ncomerciais ou institucionais.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(textArea2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(349, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(textArea2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(362, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JModelo;
-    private javax.swing.JButton jButton1;
+    private java.awt.TextArea textArea1;
+    private java.awt.TextArea textArea2;
     // End of variables declaration//GEN-END:variables
 
         private void setIcon(Icon icon) {

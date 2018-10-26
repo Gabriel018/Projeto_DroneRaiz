@@ -45,25 +45,30 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btCancelar" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel3" pref="96" max="32767" attributes="0"/>
-                              <Component id="jLabel2" max="32767" attributes="0"/>
-                              <Component id="jLabel1" max="32767" attributes="0"/>
+                          <Component id="jLabel3" pref="96" max="32767" attributes="0"/>
+                          <Component id="jLabel2" max="32767" attributes="0"/>
+                          <Component id="jLabel1" max="32767" attributes="0"/>
+                          <Component id="label1" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtIDProduto" min="-2" pref="49" max="-2" attributes="0"/>
                           <Component id="txtNomeProduto" min="-2" pref="236" max="-2" attributes="0"/>
-                          <Component id="txtDes" min="-2" pref="236" max="-2" attributes="0"/>
-                          <Component id="txtValor" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="txtDesc" min="-2" pref="236" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtQuant" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtValor" alignment="0" pref="83" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="204" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,15 +87,20 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtDes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDesc" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="9" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label1" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtValor" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtQuant" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="label1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtValor" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -123,9 +133,9 @@
         <Property name="text" type="java.lang.String" value="Descri&#xe7;ao:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDes">
+    <Component class="javax.swing.JTextField" name="txtDesc">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDesActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDescActionPerformed"/>
       </Events>
     </Component>
     <Component class="java.awt.Label" name="label1">
@@ -153,6 +163,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCancelarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtQuant">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

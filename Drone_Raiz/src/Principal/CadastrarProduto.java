@@ -41,11 +41,13 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         txtNomeProduto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtDes = new javax.swing.JTextField();
+        txtDesc = new javax.swing.JTextField();
         label1 = new java.awt.Label();
         txtValor = new javax.swing.JTextField();
         btSalvar = new javax.swing.JButton();
         btCancelar = new javax.swing.JButton();
+        txtQuant = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setBorder(new javax.swing.border.MatteBorder(null));
         setClosable(true);
@@ -68,9 +70,9 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Descriçao:");
 
-        txtDes.addActionListener(new java.awt.event.ActionListener() {
+        txtDesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDesActionPerformed(evt);
+                txtDescActionPerformed(evt);
             }
         });
 
@@ -90,6 +92,8 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel4.setText("Quantidade:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,18 +107,22 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
                         .addComponent(btCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtIDProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDes, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(204, Short.MAX_VALUE))
+                            .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtQuant, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtValor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)))))
+                .addGap(198, 198, 198))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,13 +137,17 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                    .addComponent(txtQuant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtValor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvar)
                     .addComponent(btCancelar))
@@ -151,9 +163,9 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeProdutoActionPerformed
 
-    private void txtDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDesActionPerformed
+    private void txtDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDesActionPerformed
+    }//GEN-LAST:event_txtDescActionPerformed
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
@@ -165,13 +177,14 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
         try{
             if(idAltPro == 0){
                 Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                    + "test","root","");
-                String sql = "insert into Cliente(Nome,Telefone,DDD,Email,CPF,RG,"
-                + "DtNascimento) values (?,?,?,?,?,?,?)";
+                    + "bd_drz","root","");
+                String sql = "insert into produto(Nome,Descricao,quant,"
+                + "valor) values (?,?,?,?)";
                 PreparedStatement stmt = con.prepareStatement(sql);
                 stmt.setString(1, this.txtNomeProduto.getText());
-                stmt.setInt(2, Integer.parseInt(this.txtDes.getText()));
-                stmt.setInt(3, Integer.parseInt(this.txtValor.getText()));
+                stmt.setString (2,this.txtDesc.getText());
+                stmt.setInt(3, Integer.parseInt(this.txtQuant.getText()));
+                stmt.setInt(4, Integer.parseInt(this.txtValor.getText()));
                 stmt.execute();
                 stmt.close();
                 con.close();
@@ -182,7 +195,7 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
                 + ",CPF=?,RG=?,DtNascimento=? where idCliente = ?";
                 PreparedStatement stmt = con.prepareStatement(sql);
                 stmt.setString(1, this.txtNomeProduto.getText());
-                stmt.setInt(2, Integer.parseInt(this.txtDes.getText()));
+                stmt.setInt(2, Integer.parseInt(this.txtDesc.getText()));
                 stmt.setInt(3, Integer.parseInt(this.txtValor.getText()));
                 stmt.setInt(4, idAltPro);
                 stmt.execute();
@@ -203,10 +216,12 @@ public class CadastrarProduto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private java.awt.Label label1;
-    private javax.swing.JTextField txtDes;
+    private javax.swing.JTextField txtDesc;
     private javax.swing.JTextField txtIDProduto;
     private javax.swing.JTextField txtNomeProduto;
+    private javax.swing.JTextField txtQuant;
     private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }
